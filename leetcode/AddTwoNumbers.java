@@ -3,6 +3,7 @@ package leetcode;
 //链表操作：
 //        1、返回类型
 //        2、用tmp指针暂时操作链表，保证头节点的存在
+//        3、哑节点（return res.next）
 public class AddTwoNumbers {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode res = new ListNode();
