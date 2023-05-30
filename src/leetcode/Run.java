@@ -11,7 +11,7 @@ public class Run {
         int [] test4 = new int [] {-2,3,-1,0,1,2,-1,-4};
 
         ThreeSum solution = new ThreeSum();
-        System.out.println(solution.threeSum(test4));
+        System.out.println(solution.threeSum_1(test4));
 
     }
 }
