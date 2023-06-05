@@ -3,6 +3,7 @@ package leetcode;
 import java.util.HashMap;
 import java.util.Map;
 //滑动窗口思想：left和right向前递增，类似双指针（从一头出发）。
+//双指针：一端指针移动时，代表该处及之前的情况已经不会更优了（减少了遍历）；另一端移动去探寻是否存在更优。
 // + hash表来判断重复 & 快速更新left位置
 //-->可解决连续最长不重复问题
 

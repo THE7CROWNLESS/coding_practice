@@ -7,7 +7,7 @@ public class FindMidOfSortedArrays {
         int k = 0;
         int i = 0;
         int j = 0;
-        int index_i = (nums1.length + nums2.length + 1)/ 2;
+        int index_i = (nums1.length + nums2.length + 1)/ 2; //奇数或偶数长的数组 找中位数的trick  {(len+1)/2 + (len+2)/2}/2
         int index_j = (nums1.length + nums2.length + 2)/ 2;
         while (i < nums1.length || j < nums2.length){
             //每次只进入一个条件进行，防止边界处多个进入
