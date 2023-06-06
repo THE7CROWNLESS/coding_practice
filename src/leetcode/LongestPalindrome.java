@@ -3,7 +3,7 @@ package leetcode;
 //动态规划：两层循环遍历全部字串，同时用dp[][]记录，只需要之前的dp记录和当前[i]和[j]是否相等，就能判断子串是否为回文。
 //中心扩散：通过中心和两端来遍历子串（而不是头尾，也非全部子串），同时两端是否相等即可判断子串是否为回文，不相等直接结束，减少子串遍历。
 //利用回文的特点，在遍历时判断当前是否相等，解决判断是否为回文。
-public class LongestPakindrome {
+public class LongestPalindrome {
     public String longestPalindrome_dp(String s) {
         int len = s.length();
         boolean[][] dp = new boolean[len][len];

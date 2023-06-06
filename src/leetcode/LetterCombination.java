@@ -16,6 +16,10 @@ public class LetterCombination {
         List<String> res = new ArrayList<>();
         List<String> dig2str = dig2letter(digits);
 
+        //回溯法
+        backtrack(res, 0, dig2letter(digits), new StringBuilder());
+
+
         //给定初始值：使res具有后续进入循环的可能
         for (int k = 0; dig2str.size() > 0  && k < dig2str.get(0).length(); k++) {
             res.add(dig2str.get(0).substring(k, k + 1));
@@ -54,11 +58,16 @@ public class LetterCombination {
     }
 
     //回溯法
-    public void backtrack(String s, List<String> res){
-        if(s.length() == 0){
-            res.add(" ");
+    //树结构，通过递归结构记录搜索一路上的结果，递归回退实现回溯，删除下面的结果，重新往下艘索。
+    public void backtrack(List<String> res, int index, List<String> dig2letter, StringBuilder tmp){
+        if(index == dig2letter.size()){
+            res.add(tmp.toString());
         }
-        backtrack(s.substring(1, s.length()), res);
+        for (int i = 0; i < dig2letter.get(index).length(); i++) {
+            tmp.append(dig2letter.get(index).charAt(i));
+            backtrack(res,index+1, dig2letter, tmp);
+            tmp.deleteCharAt(index);
+        }
     }
 }
 

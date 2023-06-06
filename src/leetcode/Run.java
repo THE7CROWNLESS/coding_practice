@@ -5,10 +5,10 @@ import java.util.Map;
 
 public class Run {
     public static void main(String[] args) {
-        String test = "239";
-        LetterCombination solution = new LetterCombination();
+        int[] test = new int[]{1,2,3,};
+        Subsets solution = new Subsets();
+        solution.subsets(test);
 
-        solution.letterCombinations(test);
 
     }
 }
