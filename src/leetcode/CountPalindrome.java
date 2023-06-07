@@ -1,7 +1,5 @@
 package leetcode;
 
-import sun.plugin.cache.OldCacheEntry;
-
 public class CountPalindrome {
     public int countSubstrings(String s) {
         int count = 0;
