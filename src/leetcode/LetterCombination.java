@@ -17,7 +17,7 @@ public class LetterCombination {
         List<String> dig2str = dig2letter(digits);
 
         //回溯法
-        backtrack(res, 0, dig2letter(digits), new StringBuilder());
+        backtrack(0, dig2str, res, new StringBuilder());
 
 
         //给定初始值：使res具有后续进入循环的可能
