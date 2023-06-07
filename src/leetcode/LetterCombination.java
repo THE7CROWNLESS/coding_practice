@@ -30,9 +30,7 @@ public class LetterCombination {
             }
             res = tmp;
             }
-
             return res;
-
     }
 
     //digits 2 letters
@@ -54,11 +52,16 @@ public class LetterCombination {
     }
 
     //回溯法
-    public void backtrack(String s, List<String> res){
-        if(s.length() == 0){
-            res.add(" ");
+    public void backtrack(int depth, List<String> dig2letter, List<String> res, StringBuilder path){
+        if(depth == dig2letter.size()){
+            res.add(path.toString());
+            return;
         }
-        backtrack(s.substring(1, s.length()), res);
+        for (int i = 0; i < dig2letter.get(depth).length(); i++) {
+            path.append(dig2letter.get(depth).charAt(i));
+            backtrack(depth+1, dig2letter, res, path);
+            path.deleteCharAt(i);
+        }
     }
 }
 
