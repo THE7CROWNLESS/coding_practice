@@ -7,3 +7,6 @@
 html,body{
     height: 100%;
 }
+#app > div > section > section > main > div:nth-child(3) > button.el-button{
+    margin-left: 5px;background-color: dodgerblue;color: whitesmoke;
+}
