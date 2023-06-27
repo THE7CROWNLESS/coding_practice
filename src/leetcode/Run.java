@@ -9,6 +9,5 @@ public class Run {
         Subsets solution = new Subsets();
         solution.subsets(test);
 
-
     }
 }
