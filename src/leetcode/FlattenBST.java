@@ -29,5 +29,4 @@ public class FlattenBST {
         preTraversal(root.left,list);
         preTraversal(root.right,list);
     }
-
 }
