@@ -7,17 +7,19 @@ package leetcode;
 public class MaxProductArray {
     public int maxProduct(int[] nums) {
         int len = nums.length;
-        int[] dp = new int[len];
-        int[] dp_min = new int[len];
-        dp[0] = nums[0];
-        dp_min[0] = nums[0];
+//        int[] dp = new int[len];
+//        int[] dp_min = new int[len];
+//        dp[0] = nums[0];
+//        dp_min[0] = nums[0];
+        int dp_max = nums[0];
+        int dp_min = nums[0];
 
-        int max = dp[0];
+        int max = nums[0];
         for (int i = 1; i < len; i++) {
-            dp[i] = Math.max(dp[i - 1] * nums[i], Math.max(nums[i], dp_min[i - 1] * nums[i]));
-            dp_min[i] = Math.min(dp_min[i - 1] * nums[i], Math.min(nums[i], dp[i - 1] * nums[i]));
-            if (max < dp[i]) {
-                max = dp[i];
+            dp_max = Math.max(dp_max * nums[i], Math.max(nums[i], dp_min * nums[i]));
+            dp_min = Math.min(dp_min * nums[i], Math.min(nums[i], dp_max * nums[i]));
+            if (max < dp_max) {
+                max = dp_max;
             }
         }
         return max;
