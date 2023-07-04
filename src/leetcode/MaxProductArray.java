@@ -16,8 +16,9 @@ public class MaxProductArray {
 
         int max = nums[0];
         for (int i = 1; i < len; i++) {
+            int tmp = dp_max; //防止dp_max在min中使用时已经被修改
             dp_max = Math.max(dp_max * nums[i], Math.max(nums[i], dp_min * nums[i]));
-            dp_min = Math.min(dp_min * nums[i], Math.min(nums[i], dp_max * nums[i]));
+            dp_min = Math.min(dp_min * nums[i], Math.min(nums[i], tmp * nums[i]));
             if (max < dp_max) {
                 max = dp_max;
             }
