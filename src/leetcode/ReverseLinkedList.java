@@ -2,20 +2,21 @@ package leetcode;
 
 public class ReverseLinkedList {
     public ListNode reverseList(ListNode head) {
-        if (head == null){
+        if (head == null) {
             return new ListNode();
         }
-        if (head.next == null){
+        if (head.next == null) {
             return head;
         }
 
-        ListNode tail = head;
+//        ListNode tail = head;
         ListNode cur = head.next;
+        head.next = null;
 
         while (cur != null) {
             ListNode tmp = cur.next;
             cur.next = head;
-            tail.next = tmp;
+//            tail.next = tmp;
 
             head = cur;
             cur = tmp;
